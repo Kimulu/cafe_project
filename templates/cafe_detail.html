@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ cafe.name }}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <h1>{{ cafe.name }}</h1>
+    <p>{{ cafe.description }}</p>
+    <p><strong>Address:</strong> {{ cafe.address }}</p>
+    <p><strong>Hours:</strong> {{ cafe.opening_time }} - {{ cafe.closing_time }}</p>
+    <p><strong>WiFi:</strong> {% if cafe.has_wifi %}Yes{% else %}No{% endif %}</p>
+    <p><strong>Power:</strong> {% if cafe.has_power %}Yes{% else %}No{% endif %}</p>
+    <p><strong>Noise level:</strong> {{ cafe.noise_level }}</p>
+  </div>
+  <div class="col-md-6">
+    <img src="{{ cafe.img_url }}" class="img-fluid" alt="{{ cafe.name }}">
+  </div>
+</div>
+{% endblock %}

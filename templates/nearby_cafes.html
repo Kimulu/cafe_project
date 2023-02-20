@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="features-section">
+
+
+  <h1>Nearby Cafes</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name of Cafe</th>
+        <th scope="col">Distance From You</th>
+        <th scope="col">Other User Rating</th>
+        <th scope="col">Is The Place Open Now</th>
+        <th scope="col">Power Outlet</th>
+        <th scope="col">WiFi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for places in places1 %}
+      <tr>
+        
+        <td>{{places.name}}</td>
+        <td>({{ places.distance }} km)</td>
+        <td>{{places.rating}}</td>
+        <td>Open : {{places.opening_hours.open_now}}</td>
+        <td>Unknown</td>
+        <td>Unknown</td>
+
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+   
+     
+  
+</section>
+{% endblock %}
